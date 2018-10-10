@@ -6,13 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: d10dbd1f332f1882c433f410a0704a84de405ba3068f285f9c23704701ee3d73  # [not win]
+  - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+    fn: {{ name }}-{{ version }}.tar.gz  # [not win]
+    sha256: d10dbd1f332f1882c433f410a0704a84de405ba3068f285f9c23704701ee3d73  # [not win]
+    folder: src/github.com/hashicorp/{{ name }}  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-  fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: 01a2d2979623efb95067251b569cc2020b36fbfafdca0e9cd6b4fb7f14805712  # [win64]
+  - url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+    fn: {{ name }}-{{ version }}.zip  # [win]
+    sha256: 01a2d2979623efb95067251b569cc2020b36fbfafdca0e9cd6b4fb7f14805712  # [win64]
 
 build:
   number: 1000
